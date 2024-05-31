@@ -11,6 +11,13 @@
 <body class="container">
     <h1>{{ $title }}</h1>
 
+    @if($errors->any())
+        <div class="alert alert-danger">
+            @foreach($errors->all() as $error)
+                {{ $error }}
+            @endforeach
+        </div>
+    @endif
     {{ $slot }}
 </body>
 
